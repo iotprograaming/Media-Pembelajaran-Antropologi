@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Budaya Betawi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              toba: "#8B0000",
+              tobaDark: "#5A0000",
+              background: "#FFF8F0",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-gray-800 dark:bg-gray-900 dark:text-white font-sans transition-all duration-300 scroll-smooth"
+  >
+    <!-- Navbar -->
+    <nav class="bg-toba text-white dark:bg-gray-800 p-4 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Budaya Betawi</h1>
+
+        <!-- Hamburger & Nav items container -->
+        <div class="flex items-center gap-4">
+          <!-- Desktop menu -->
+          <ul id="nav-menu" class="hidden md:flex gap-4 text-white">
+            <li><a href="#rumah" class="hover:underline">Rumah Adat</a></li>
+            <li><a href="#baju" class="hover:underline">Baju Adat</a></li>
+            <li><a href="#tarian" class="hover:underline">Tarian Adat</a></li>
+            <li><a href="#makanan" class="hover:underline">Makanan Khas</a></li>
+          </ul>
+
+          <!-- Dark mode toggle -->
+          <button
+            id="toggleDark"
+            class="ml-4 text-xl hover:text-yellow-300"
+            aria-label="Toggle Dark Mode"
+          >
+            🌓
+          </button>
+
+          <!-- Hamburger button for mobile -->
+          <button
+            id="hamburger"
+            class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span class="block h-0.5 bg-white rounded"></span>
+            <span class="block h-0.5 bg-white rounded"></span>
+            <span class="block h-0.5 bg-white rounded"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <ul
+        id="mobile-menu"
+        class="md:hidden bg-toba dark:bg-gray-800 text-white px-4 py-2 space-y-2 hidden"
+      >
+        <li>
+          <a href="#rumah" class="block py-2 hover:underline">Rumah Adat</a>
+        </li>
+        <li>
+          <a href="#baju" class="block py-2 hover:underline">Baju Adat</a>
+        </li>
+        <li>
+          <a href="#tarian" class="block py-2 hover:underline">Tarian Adat</a>
+        </li>
+        <li>
+          <a href="#makanan" class="block py-2 hover:underline">Makanan Khas</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      class="bg-cover bg-center py-28 px-6 text-white text-center"
+      style="background-image: url('asset/betawi/TARIANKHASBETAWI.png')"
+    >
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+        Selamat Datang di Budaya Betawi
+      </h2>
+      <p class="text-4xl md:text-xl font-bold mb-4 drop-shadow-lg">
+        Jelajahi kekayaan adat dan tradisi suku Betawi dari Jakarta.
+      </p>
+    </section>
+
+    <!-- Konten -->
+    <section class="py-16 px-6 space-y-20">
+      <!-- Rumah Adat dengan Gambar -->
+      <div
+        id="rumah"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="asset/betawi/RUMAHADATBETAWI.jpeg"
+            alt="Rumah Kebaya"
+            class="w-70 h-60 object-cover rounded-lg"
+          />
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">🏠 Rumah Adat</h3>
+            <p>
+              <strong>Rumah kebaya</strong> adalah sebuah nama rumah adat suku
+              Betawi. Disebut dengan rumah kebaya karena bentuk atapnya yang
+              menyerupai pelana yang dilipat dan apabila dilihat dari samping
+              maka lipatan-lipatan tersebut terlihat seperti lipatan kebaya.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Baju Adat dengan Gambar -->
+      <div
+        id="baju"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="asset/betawi/PAKAIANADATBETAWI.jpeg"
+            alt="Baju adat Betawi"
+            class="w-70 h-60 object-cover rounded-lg"
+          />
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">👘 Baju Adat</h3>
+            <p>
+              Pakaian adat Betawi memiliki berbagai jenis, di antaranya Kebaya
+              Encim untuk wanita, Baju Pangsi untuk pria. Pakaian ini sering
+              dikenakan dalam berbagai acara adat, seperti pernikahan dan
+              perayaan hari besar, serta sebagai identitas daerah. Fungsi utama
+              pakaian adat Betawi adalah sebagai identitas daerah, penanda
+              status sosial, dan sebagai bagian dari tradisi dalam berbagai
+              acara adat
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarian Adat dengan Video -->
+      <div
+        id="tarian"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <video
+            controls
+            class="w-70 h-60 rounded-lg"
+            poster="asset/betawi/TARIANKHASBETAWI.png"
+          >
+            <source src="asset/betawi/TARIANBETAWI.mp4" type="video/mp4" />
+            Browser Anda tidak mendukung video.
+          </video>
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">💃 Tarian Adat</h3>
+            <p>
+              Tarian mencerminkan identitas sebuah kebudayaan. Budaya Betawi
+              begitu kaya dengan berbagai tarian yang dipengaruhi oleh campuran
+              budaya lainnya. Budaya Melayu, Tionghoa, Arab, dan berbagai budaya
+              lokal nusantara bercampur padu secara harmonis hingga membentuk
+              tarian Betawi. Anda bisa melihat pagelaran tarian Betawi yang
+              dipertunjukkan dengan semangat, bahagia, dan energik mulai dari
+              hajatan masyarakat, hingga upacara resmi di Jakarta.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Makanan Khas dengan Gambar -->
+      <div
+        id="makanan"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="asset/betawi/MAKANANKHASBETAWI.jpeg"
+            alt="Makanan Khas Betawi"
+            class="w-70 h-60 object-cover rounded-lg"
+          />
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">🍽️ Makanan Khas</h3>
+            <p>
+              <strong>Soto Betawi</strong> merupakan jenis soto dari daerah DKI
+              Jakarta. Seperti halnya soto Madura dan soto sulung, soto Betawi
+              juga menggunakan jeroan. Selain jeroan, sering kali organ-organ
+              lain juga disertakan, seperti mata, terpedo, penis sapi dan juga
+              hati. Daging sapi juga menjadi bahan campuran dalam soto Betawi.
+              Kuah soto Betawi merupakan campuran santan dan susu kuda. Kedua
+              campuran inilah yang membuat rasa soto Betawi begitu khas. Salah
+              satu unsur kunci yang membedakan soto Betawi adalah penggunaan
+              santan & jeroan sapi yang melimpah dalam kuahnya. Kuah soto Betawi
+              umumnya kental dan gurih berkat penggunaan santan yang melimpah.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Fullscreen Gambar -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50"
+    >
+      <span
+        class="absolute top-4 right-6 text-white text-4xl cursor-pointer"
+        onclick="closeModal()"
+        >&times;</span
+      >
+      <img
+        id="modalImage"
+        src=""
+        class="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+      />
+    </div>
+    <!-- Footer -->
+    <footer class="bg-tobaDark text-white text-center py-4">
+      &copy; 2025 Media Pembelajaran Antropologi. Dibuat dengan ❤ untuk
+      pendidikan budaya Indonesia.
+    </footer>
+
+    <script>
+      // Dark mode toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("toggleDark");
+        toggle.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        hamburger.addEventListener("click", () => {
+          const expanded =
+            hamburger.getAttribute("aria-expanded") === "true" || false;
+          hamburger.setAttribute("aria-expanded", !expanded);
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+
+      function openModal(imgSrc) {
+        document.getElementById("modalImage").src = imgSrc;
+        document.getElementById("imageModal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("imageModal").classList.add("hidden");
+        document.getElementById("modalImage").src = "";
+      }
+
+      // Tambahkan event click ke semua gambar
+      document.addEventListener("DOMContentLoaded", () => {
+        const images = document.querySelectorAll("img");
+        images.forEach((img) => {
+          img.style.cursor = "pointer";
+          img.addEventListener("click", () => {
+            openModal(img.src);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

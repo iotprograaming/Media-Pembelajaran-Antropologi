@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Budaya Nias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              toba: "#8B0000",
+              tobaDark: "#5A0000",
+              background: "#FFF8F0",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background text-gray-800 dark:bg-gray-900 dark:text-white font-sans transition-all duration-300 scroll-smooth"
+  >
+    <!-- Navbar -->
+    <nav class="bg-toba text-white dark:bg-gray-800 p-4 sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Budaya Nias</h1>
+
+        <!-- Hamburger & Nav items container -->
+        <div class="flex items-center gap-4">
+          <!-- Desktop menu -->
+          <ul id="nav-menu" class="hidden md:flex gap-4 text-white">
+            <li><a href="#rumah" class="hover:underline">Rumah Adat</a></li>
+            <li><a href="#baju" class="hover:underline">Baju Adat</a></li>
+            <li><a href="#tarian" class="hover:underline">Tarian Adat</a></li>
+            <li><a href="#makanan" class="hover:underline">Makanan Khas</a></li>
+          </ul>
+
+          <!-- Dark mode toggle -->
+          <button
+            id="toggleDark"
+            class="ml-4 text-xl hover:text-yellow-300"
+            aria-label="Toggle Dark Mode"
+          >
+            🌓
+          </button>
+
+          <!-- Hamburger button for mobile -->
+          <button
+            id="hamburger"
+            class="md:hidden flex flex-col justify-between w-6 h-5 focus:outline-none"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span class="block h-0.5 bg-white rounded"></span>
+            <span class="block h-0.5 bg-white rounded"></span>
+            <span class="block h-0.5 bg-white rounded"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <ul
+        id="mobile-menu"
+        class="md:hidden bg-toba dark:bg-gray-800 text-white px-4 py-2 space-y-2 hidden"
+      >
+        <li>
+          <a href="#rumah" class="block py-2 hover:underline">Rumah Adat</a>
+        </li>
+        <li>
+          <a href="#baju" class="block py-2 hover:underline">Baju Adat</a>
+        </li>
+        <li>
+          <a href="#tarian" class="block py-2 hover:underline">Tarian Adat</a>
+        </li>
+        <li>
+          <a href="#makanan" class="block py-2 hover:underline">Makanan Khas</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      class="bg-cover bg-center py-28 px-6 text-white text-center"
+      style="background-image: url('bg_nias.jpg')"
+    >
+      <h2 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Selamat Datang di Budaya Nias</h2>
+      <p class="text-4xl md:text-xl font-bold mb-4 drop-shadow-lg">
+        Jelajahi kekayaan adat dan tradisi suku Nias dari Sumatera Utara.
+      </p>
+    </section>
+
+    <!-- Konten -->
+    <section class="py-16 px-6 space-y-20">
+      <!-- Rumah Adat Nias Selatan dengan Gambar -->
+      <div
+        id="rumah"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="asset/nias_selatan/RUMAHADATNIASSELATAN.jpeg"
+            alt="Rumah Bolon"
+            class="w-70 h-60 object-cover rounded-lg"
+          />
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">🏠 Rumah Adat Nias Selatan</h3>
+            <p>
+              <strong>Rumah Adat Nias Selatan (Omo Hada)</strong> bukan sekadar
+              tempat tinggal, tetapi merupakan simbol kearifan lokal, kekuatan
+              komunitas, dan nilai spiritual yang tinggi. Struktur arsitekturnya
+              yang unik dan tahan gempa menjadikan Omo Hada sebagai salah satu
+              warisan budaya yang sangat penting di Indonesia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rumah Adat Nias Barat dengan Gambar -->
+      <div
+        id="rumah"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="asset/nias_barat/RUMAHADATNIASBARAT.jpeg"
+            alt="Rumah Bolon"
+            class="w-70 h-60 object-cover rounded-lg"
+          />
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">🏠 Rumah Adat Nias Barat</h3>
+            <p>
+              <strong>Rumah Adat Nias Selatan (Omo Hada)</strong> bukan sekadar
+              tempat tinggal, tetapi merupakan simbol kearifan lokal, kekuatan
+              komunitas, dan nilai spiritual yang tinggi. Struktur arsitekturnya
+              yang unik dan tahan gempa menjadikan Omo Hada sebagai salah satu
+              warisan budaya yang sangat penting di Indonesia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Baju Adat dengan Gambar -->
+      <div
+        id="baju"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="asset/PAKAIANADATNIAS.jpeg"
+            alt="Ulos Batak Toba"
+            class="w-70 h-60 object-cover rounded-lg"
+          />
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">👘 Baju Adat</h3>
+            <p>
+              Baju adat Nias berasal dari <strong>Pulau Nias</strong>, yang
+              terletak di sebelah barat Pulau Sumatera, Provinsi Sumatera Utara.
+              Suku Nias memiliki budaya yang sangat khas, termasuk budaya
+              berpakaian tradisional yang sarat dengan simbol kekuatan,
+              kebangsawanan, dan religiositas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarian Adat dengan Video -->
+      <div
+        id="tarian"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <video
+            controls
+            class="w-70 h-60 rounded-lg"
+            poster="asset/TARIANNIAS.webp"
+          >
+            <source src="asset/TARIANADATNIAS.mp4" type="video/mp4" />
+            Browser Anda tidak mendukung video.
+          </video>
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">💃 Tarian Adat</h3>
+            <p>
+              Tarian adat Nias merupakan salah satu warisan budaya yang kaya
+              dari Pulau Nias, Sumatera Utara, Indonesia. Sebagai bagian dari
+              kebudayaan suku Nias, tarian-tarian ini memiliki nilai filosofis
+              dan historis yang mendalam, mencerminkan kehidupan masyarakat,
+              kepercayaan, dan tradisi mereka.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Makanan Khas dengan Gambar -->
+      <div
+        id="makanan"
+        class="container mx-auto bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg"
+      >
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <img
+            src="asset/MAKANANKHASNIAS.jpg"
+            alt="Makanan Khas Batak Toba"
+            class="w-70 h-60 object-cover rounded-lg"
+          />
+          <div class="md:flex-1">
+            <h3 class="text-2xl font-bold mb-2">🍽️ Makanan Khas</h3>
+            <p>
+              Penjelasan Lengkap tentang Makanan Khas Nias Pulau Nias, yang
+              terletak di sebelah barat Sumatera, Indonesia, memiliki warisan
+              kuliner yang kaya dan unik. Makanan khas Nias mencerminkan
+              identitas budaya masyarakat setempat, dipengaruhi oleh kondisi
+              geografis pulau dan bahan-bahan lokal yang tersedia. Berikut
+              penjelasan lengkap tentang berbagai makanan khas Nias: 
+              <p><strong>MakananPokok dan Lauk Pauk</strong></p> 
+              1. Kofo-kofo (Gado-kofo) Makanan berbahan
+              dasar singkong yang difermentasi Biasanya dimasak dengan santan
+              dan bumbu rempah khas Nias Memiliki tekstur kenyal dan rasa asam
+              yang khas Merupakan makanan pokok pengganti nasi di beberapa
+              daerah Nias 
+              <p>2. Bawi Nifarӧ Babi panggang khas Nias yang dimasak
+                dengan bumbu tradisional Daging babi dibumbui dengan rempah-rempah
+                seperti kunyit, jahe, bawang, dan garam Dimasak dengan cara
+                dipanggang di atas bara api Merupakan hidangan yang sangat penting
+                dalam upacara adat dan pesta </p>
+                <p>  3. Nami Nifarӧ Ayam panggang dengan
+                  bumbu khas Nias Dimasak dengan cara dipanggang dan dibumbui dengan
+                  rempah lokal Sering disajikan pada acara adat atau pesta
+                  pernikahan</p>
+                  <p>  4. Gowi Nifakhe Ikan yang dimasak dengan cara diasapi
+                    atau dipanggang Menggunakan ikan segar dari perairan sekitar Nias
+                    Bumbu sederhana namun kaya rasa</p>
+                    <p>5. Nidanӧ Sayur daun singkong yang
+                      dicampur dengan kelapa parut Dimasak dengan tambahan ikan atau
+                      daging Merupakan hidangan sehari-hari masyarakat Nias</p>
+             <strong><p>Kue dan Jajanan Tradisional </p></strong>
+             <p> 1. Nifaoya Kue berbahan dasar tepung beras
+              ketan dan kelapa Dimasak dengan cara dikukus Memiliki tekstur
+              kenyal dan biasanya disajikan dengan gula aren</p>
+              <p>2. Yo Lase Banio
+                Kue yang terbuat dari campuran pisang dan kelapa parut Dibungkus
+                dengan daun pisang dan dipanggang Memiliki rasa manis alami dari
+                pisang</p>
+               3. Nami Ni'ogikhi Hidangan berbahan dasar ayam yang
+              dicampur dengan darah ayam Dianggap sebagai makanan bergizi tinggi
+              oleh masyarakat lokal Biasanya disajikan dalam acara-acara khusus
+              <br>
+              <p><strong>Minuman Tradisional</strong></p>
+              1. Tuak Nias Minuman fermentasi dari nira pohon aren Memiliki
+              kadar alkohol yang bervariasi tergantung lama fermentasi Menjadi
+              bagian penting dalam upacara adat dan acara sosial 
+              <p>2. Teh Gawӧ
+              Minuman herbal dari daun tanaman lokal Dipercaya memiliki khasiat
+              menyehatkan Disajikan hangat dan terkadang dicampur dengan madu</p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Fullscreen Gambar -->
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center hidden z-50">
+  <span class="absolute top-4 right-6 text-white text-4xl cursor-pointer" onclick="closeModal()">&times;</span>
+  <img id="modalImage" src="" class="max-w-full max-h-full object-contain rounded-lg shadow-lg" />
+</div>
+
+    <!-- Footer -->
+    <footer class="bg-tobaDark text-white text-center py-4">
+      &copy; 2025 Media Pembelajaran Antropologi. Dibuat dengan ❤ untuk
+      pendidikan budaya Indonesia.
+    </footer>
+
+    <script>
+      // Dark mode toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.getElementById("toggleDark");
+        toggle.addEventListener("click", () => {
+          document.documentElement.classList.toggle("dark");
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        hamburger.addEventListener("click", () => {
+          const expanded =
+            hamburger.getAttribute("aria-expanded") === "true" || false;
+          hamburger.setAttribute("aria-expanded", !expanded);
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+
+      function openModal(imgSrc) {
+    document.getElementById("modalImage").src = imgSrc;
+    document.getElementById("imageModal").classList.remove("hidden");
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").classList.add("hidden");
+    document.getElementById("modalImage").src = "";
+  }
+
+  // Tambahkan event click ke semua gambar
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+    images.forEach((img) => {
+      img.style.cursor = "pointer";
+      img.addEventListener("click", () => {
+        openModal(img.src);
+      });
+    });
+  });
+    </script>
+  </body>
+</html>
