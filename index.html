@@ -206,6 +206,38 @@
               Pelajari lebih detail
             </button>
           </div>
+          <!-- Kartu 7 -->
+          <div
+            class="bg-white dark:bg-gray-700 p-6 shadow-lg rounded-xl hover:scale-105 transition-transform duration-300"
+          >
+            <h4 class="text-xl font-semibold mb-2">Suku Bali</h4>
+            <p>
+              Pelajari budaya suku Bali mulai dari rumah adat, pakaian adat,
+              hingga tarian tradisional.
+            </p>
+            <button
+              class="bg-white dark:bg-gray-900 p-2 shadow-lg rounded-lg mt-2"
+              onclick="bali()"
+            >
+              Pelajari lebih detail
+            </button>
+          </div>
+          <!-- Kartu 8 -->
+          <div
+            class="bg-white dark:bg-gray-700 p-6 shadow-lg rounded-xl hover:scale-105 transition-transform duration-300"
+          >
+            <h4 class="text-xl font-semibold mb-2">Suku Baduy Luar</h4>
+            <p>
+              Pelajari budaya suku Baduy Luar mulai dari rumah adat, pakaian
+              adat, hingga tarian tradisional.
+            </p>
+            <button
+              class="bg-white dark:bg-gray-900 p-2 shadow-lg rounded-lg mt-2"
+              onclick="baduyLuar()"
+            >
+              Pelajari lebih detail
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -239,17 +271,131 @@
 
     <!-- Script -->
     <script>
+      // Data quiz dengan pertanyaan dan pilihan jawaban
+      const quizData = [
+        {
+          pertanyaan: "Apa rumah adat dari Sumatera Barat?",
+          pilihan: ["Rumah Gadang", "Joglo"],
+          jawabanBenar: "Rumah Gadang",
+        },
+        {
+          pertanyaan:
+            "Tarian khas Bali yang ditarikan oleh sekelompok pria sambil mengeluarkan suara 'cak' adalah?",
+          pilihan: ["Tari Kecak", "Tari Pendet"],
+          jawabanBenar: "Tari Kecak",
+        },
+        {
+          pertanyaan:
+            "Alat musik tradisional Jawa Barat yang terbuat dari bambu adalah?",
+          pilihan: ["Angklung", "Gamelan"],
+          jawabanBenar: "Angklung",
+        },
+        {
+          pertanyaan: "Senjata tradisional dari Sulawesi Selatan adalah?",
+          pilihan: ["Badik", "Keris"],
+          jawabanBenar: "Badik",
+        },
+        {
+          pertanyaan: "Pakaian adat DKI Jakarta disebut?",
+          pilihan: ["Betawi", "Kebaya"],
+          jawabanBenar: "Betawi",
+        },
+        {
+          pertanyaan: "Suku asli dari Papua adalah?",
+          pilihan: ["Asmat", "Dayak"],
+          jawabanBenar: "Asmat",
+        },
+      ];
+
+      // Variabel untuk menyimpan indeks pertanyaan saat ini
+      let currentQuestionIndex = 0;
+
+      // Fungsi untuk mengacak urutan array
+      function acakArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+      }
+
+      // Acak urutan pertanyaan saat halaman dimuat
+      document.addEventListener("DOMContentLoaded", function () {
+        acakArray(quizData);
+        tampilkanPertanyaan();
+      });
+
+      // Fungsi untuk menampilkan pertanyaan
+      function tampilkanPertanyaan() {
+        const quizContainer = document.getElementById("quiz");
+        const pertanyaanElement = quizContainer.querySelector("p");
+        const tombolContainer = quizContainer.querySelector("div");
+        const hasilJawaban = document.getElementById("hasilJawaban");
+
+        // Reset hasil jawaban sebelumnya
+        hasilJawaban.innerText = "";
+
+        // Tampilkan pertanyaan baru
+        pertanyaanElement.innerText = quizData[currentQuestionIndex].pertanyaan;
+
+        // Acak urutan pilihan jawaban
+        const pilihanAcak = [...quizData[currentQuestionIndex].pilihan];
+        acakArray(pilihanAcak);
+
+        // Hapus tombol yang ada
+        const tombolLama = tombolContainer.querySelectorAll("button");
+        tombolLama.forEach((tombol) => {
+          if (tombol) tombol.remove();
+        });
+
+        // Buat tombol baru untuk pilihan jawaban
+        pilihanAcak.forEach((pilihan, index) => {
+          const tombol = document.createElement("button");
+          tombol.innerText = pilihan;
+          tombol.onclick = function () {
+            jawab(pilihan);
+          };
+          tombol.className =
+            index === 0
+              ? "bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition"
+              : "bg-red-500 text-white px-6 py-2 rounded-full hover:bg-red-700 transition ml-4";
+
+          // Tambahkan tombol sebelum elemen p#hasilJawaban
+          hasilJawaban.parentNode.insertBefore(tombol, hasilJawaban);
+        });
+      }
+
+      // Fungsi untuk memeriksa jawaban
       function jawab(jawaban) {
         const hasil = document.getElementById("hasilJawaban");
-        if (jawaban === "Rumah Gadang") {
-          hasil.innerText =
-            "✅ Benar! Rumah Gadang adalah rumah adat dari Sumatera Barat.";
+        const jawabanBenar = quizData[currentQuestionIndex].jawabanBenar;
+
+        if (jawaban === jawabanBenar) {
+          hasil.innerText = `✅ Benar! ${jawabanBenar} adalah jawaban yang tepat.`;
           hasil.className = "text-green-500 font-bold mt-4";
+
+          // Tunggu 1.5 detik lalu ganti ke pertanyaan berikutnya
+          setTimeout(() => {
+            // Pindah ke pertanyaan berikutnya dengan memutar kembali jika di akhir
+            currentQuestionIndex = (currentQuestionIndex + 1) % quizData.length;
+            tampilkanPertanyaan();
+          }, 1500);
         } else {
-          hasil.innerText = "❌ Salah. Coba lagi!";
+          hasil.innerText = `❌ Salah. Coba lagi!`;
           hasil.className = "text-red-500 font-bold mt-4";
         }
       }
+      // function jawab(jawaban) {
+      //   const hasil = document.getElementById("hasilJawaban");
+      //   if (jawaban === "Rumah Gadang") {
+      //     hasil.innerText =
+      //       "✅ Benar! Rumah Gadang adalah rumah adat dari Sumatera Barat.";
+      //     hasil.className = "text-green-500 font-bold mt-4";
+      //   } else {
+      //     hasil.innerText = "❌ Salah. Coba lagi!";
+      //     hasil.className = "text-red-500 font-bold mt-4";
+      //   }
+      // }
 
       document.addEventListener("DOMContentLoaded", () => {
         const toggle = document.getElementById("toggleDark");
@@ -296,6 +442,12 @@
       }
       function biak() {
         window.location.href = "biak.html";
+      }
+      function bali() {
+        window.location.href = "bali.html";
+      }
+      function baduyLuar() {
+        window.location.href = "baduyluar.html";
       }
     </script>
   </body>
