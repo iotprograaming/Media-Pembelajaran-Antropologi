@@ -45,7 +45,7 @@
         <ul id="menu" class="hidden md:flex gap-6 text-white font-medium">
           <li><a href="#beranda" class="hover:underline">Beranda</a></li>
           <li><a href="#materi" class="hover:underline">Materi</a></li>
-          <li><a href="#video" class="hover:underline">Video</a></li>
+          <!-- <li><a href="#video" class="hover:underline">Video</a></li> -->
           <li><a href="#quiz" class="hover:underline">Quiz</a></li>
         </ul>
 
@@ -86,7 +86,7 @@
       >
         <a href="#beranda" class="block py-2 hover:underline">Beranda</a>
         <a href="#materi" class="block py-2 hover:underline">Materi</a>
-        <a href="#video" class="block py-2 hover:underline">Video</a>
+        <!-- <a href="#video" class="block py-2 hover:underline">Video</a> -->
         <a href="#quiz" class="block py-2 hover:underline">Quiz</a>
       </div>
     </nav>
@@ -234,6 +234,54 @@
             <button
               class="bg-white dark:bg-gray-900 p-2 shadow-lg rounded-lg mt-2"
               onclick="baduyLuar()"
+            >
+              Pelajari lebih detail
+            </button>
+          </div>
+          <!-- Kartu 9 -->
+          <div
+            class="bg-white dark:bg-gray-700 p-6 shadow-lg rounded-xl hover:scale-105 transition-transform duration-300"
+          >
+            <h4 class="text-xl font-semibold mb-2">Suku Toraja</h4>
+            <p>
+              Pelajari budaya suku Toraja mulai dari rumah adat, pakaian adat,
+              hingga tarian tradisional.
+            </p>
+            <button
+              class="bg-white dark:bg-gray-900 p-2 shadow-lg rounded-lg mt-2"
+              onclick="toraja()"
+            >
+              Pelajari lebih detail
+            </button>
+          </div>
+          <!-- Kartu 10 -->
+          <div
+            class="bg-white dark:bg-gray-700 p-6 shadow-lg rounded-xl hover:scale-105 transition-transform duration-300"
+          >
+            <h4 class="text-xl font-semibold mb-2">Suku Gayo</h4>
+            <p>
+              Pelajari budaya suku Gayo mulai dari rumah adat, pakaian adat,
+              hingga tarian tradisional.
+            </p>
+            <button
+              class="bg-white dark:bg-gray-900 p-2 shadow-lg rounded-lg mt-2"
+              onclick="gayo()"
+            >
+              Pelajari lebih detail
+            </button>
+          </div>
+          <!-- Kartu 11 -->
+          <div
+            class="bg-white dark:bg-gray-700 p-6 shadow-lg rounded-xl hover:scale-105 transition-transform duration-300"
+          >
+            <h4 class="text-xl font-semibold mb-2">Suku Sumba</h4>
+            <p>
+              Pelajari budaya suku Sumba mulai dari rumah adat, pakaian adat,
+              hingga tarian tradisional.
+            </p>
+            <button
+              class="bg-white dark:bg-gray-900 p-2 shadow-lg rounded-lg mt-2"
+              onclick="sumba()"
             >
               Pelajari lebih detail
             </button>
@@ -448,6 +496,15 @@
       }
       function baduyLuar() {
         window.location.href = "baduyluar.html";
+      }
+      function toraja() {
+        window.location.href = "toraja.html";
+      }
+      function gayo() {
+        window.location.href = "gayo.html";
+      }
+      function sumba() {
+        window.location.href = "sumba.html";
       }
     </script>
   </body>
